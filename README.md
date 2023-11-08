@@ -2,6 +2,7 @@
 <br/>
 <br/>개인 블로그 사이트 velog 게시글 (1) to (3) 의 소스코드
 <br/>
+<br/><br/>
 
 [장고 시작하기 - 프로젝트 생성과 설정](https://velog.io/@kimjihong/Django-python%EC%9E%A5%EA%B3%A0-%EC%9B%B9-%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-1%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%83%9D%EC%84%B1%EA%B3%BC-)
 
