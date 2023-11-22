@@ -15,5 +15,5 @@
 <br>
 
 - Series - My Project
-   - [velog series 바로가기]((https://velog.io/@kimjihong/series/MyPrograms)) | [github series 바로가기](https://github.com/JiHongKim98/velog-post/tree/main/project)
+   - [velog series 바로가기](https://velog.io/@kimjihong/series/MyPrograms) | [github series 바로가기](https://github.com/JiHongKim98/velog-post/tree/main/project)
 <br>
