@@ -1,4 +1,10 @@
 # velog Series - Django Basics
+
+Django Basics - [Series 바로가기](https://velog.io/@kimjihong/series/django-basics)
+<br>
+
+# velog - Post list
+
 <br>
 
 - [Django-python]장고 웹 프레임워크 시작하기 - (1)프로젝트 생성과 설정

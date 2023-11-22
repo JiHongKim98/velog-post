@@ -1,4 +1,10 @@
 # velog Series - My Project
+
+My project - [Series 바로가기](https://velog.io/@kimjihong/series/MyPrograms)
+<br>
+
+# velog - Post list
+
 <br>
 
 - [python] gitHub REST API 를 이용한 자동 업데이트 프로젝트 - (1)

@@ -1,4 +1,10 @@
 # velog Series - Django and API
+
+Django and API - [Series 바로가기](https://velog.io/@kimjihong/series/django)
+<br>
+
+# velog - Post list
+
 <br>
 
 - [Django] - Authentication System (로그인, 회원가입 구현)
