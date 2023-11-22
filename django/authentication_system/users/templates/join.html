@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김지홍</title>
+</head>
+<body>
+
+    <h1>아이디 만들기</h1>
+    <div>새로운 아이디</div>
+
+    {% if error_msg %}
+    <div>
+        {{ error_msg }}
+    </div>
+    {% endif%}
+
+    <form action="{% url 'users:JoinUrl' %}" method="post">
+        {% csrf_token %}
+
+        <div>아이디 : <input type="text" name="username"></div>
+        <div>비밀번호 : <input type="password" name="password"></div>
+        <div>비밀번호 확인 : <input type="password" name="password_check"></div>
+        <div>
+            <button type="submit" value="create" name="account">완료</button>
+            <button type="submit" value="cancel" name="account">취소</button>
+        </div>
+
+    </form>
+
+</body>
+</html>

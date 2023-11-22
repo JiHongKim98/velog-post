@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김지홍</title>
+</head>
+<body>
+
+    <h1>TEST</h1>
+    <div>form 커스텀</div>
+    <br>
+    
+    <!-- url 패턴 'using_DB' 로 form 을 post 하겠다는걸 의미! -->
+    <form action="{% url 'using_DB' %}" method="post">
+        {% csrf_token %}
+
+        <!-- .as_p, .as_div 등등 사용가능! 
+        .as_p => <p> form 내용 </p>
+        .as_div => <div> form 내용 </div>-->
+        {{ form.as_div }}
+
+        <div>
+            <input type="submit" value="저장" name="form_save">
+        </div>
+
+    </form>
+    <br>
+
+    <!-- DB 내 있는 데이터를 모두 보여주기 -->
+    {% if context_DB %}
+    {% for DB_data in context_DB %}
+    <br>
+
+    <div>id : {{ DB_data.id}}</div>
+    <div>text : {{ DB_data.text_fields }}</div>
+    <div>bool : {{ DB_data.bool_fields }}</div>
+    <div>char : {{ DB_data.char_fields }}</div>
+
+    {% endfor %}
+    {% endif %}
+
+</body>
+</html>

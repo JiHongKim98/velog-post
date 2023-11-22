@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김지홍</title>
+</head>
+<body>
+
+    <h1>로그인 페이지</h1>
+    <br>
+    <div>로그인</div>
+    <br>
+
+    {% if user.is_authenticated %}
+
+        <div>{{ user.username }} 님으로 로그인 성공</div>
+        <form action="{% url 'users:LogoutUrl' %}">
+            {% csrf_token %}
+
+            <button type="submit">로그아웃</button>
+        </form>
+
+    {% else %}
+
+    <form action="{% url 'users:LoginUrl' %}" method="post">
+        {% csrf_token %}
+
+        <div>아이디 : <input name="username" type="text"></div>
+        <div>비밀번호 : <input name="password" type="password"></div>
+        <div><button type="submit" name="account" value="login">로그인</button></div>
+        <div><button type="submit" name="account" value="join">회원가입</button></div>
+
+    </form>
+    {% endif %}
+
+</body>
+</html>

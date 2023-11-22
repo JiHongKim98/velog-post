@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POST방식</title>
+</head>
+<body>
+
+    <h1>TEST_kimjihong</h1>
+    <div>안녕하세요?</div>
+    
+  	<!-- action 속성은 데이터가 전송될 URL 패턴을 지정.
+ 	지난 게시글에서의 urls.py에서 별칭(name) 파라미터-->
+    <form action="" method="post">
+      
+      	<!-- ※중요※
+		장고 에서 POST 요청을 보낼 때 CSRF 보호 기능을 사용하려면,
+		꼭! form 태그 내부에 이 csrf_token 태그를 포함시켜야 한다. -->
+        {% csrf_token %}
+      
+        <div>
+            <input type="text" name="text_data_input">
+        </div>
+        <div>
+            <!-- 같은 name 을 사용하여
+                views.py 에서 value 값을 검사하여
+                원하는 logic 을 넣을 수 있다. -->
+            <input type="submit" value="세션저장" name="action">
+
+            <input type="submit" value="세션삭제" name="action">
+        </div>
+    </form>
+    
+  	<!-- DTL(장고 템플릿 언어)의 if문.
+	text_data가 있다면 endif 까지의 내용을 출력
+ 	즉, text_data라는 데이터(context)가 있다면 출력 -->
+    {% if text_data %}
+    <div>
+        {{ text_data }}
+    </div>
+  	<!-- DTL if 문 종료 -->
+    {% endif %}
+
+</body>
+</html>

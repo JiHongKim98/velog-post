@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김지홍</title>
+</head>
+<body>
+
+    <h1>TEST</h1>
+    <div>form 커스텀</div>
+    <br>
+    
+    <!-- url 패턴 'using_DB' 로 form 을 post 하겠다는걸 의미! -->
+    <form action="{% url 'using_DB' %}" method="post">
+        {% csrf_token %}
+
+        <!-- .as_p, .as_div 등등 사용가능! 
+        .as_p => <p> form 내용 </p>
+        .as_div => <div> form 내용 </div>-->
+        {{ form.as_div }}
+
+        <div>
+            {% if not edit_type %}
+            <input type="submit" value="저장" name="form_save">
+
+            {% elif edit_type %}
+            <input type="hidden" value="{{ edit_ID }}" name="hidden">
+            <input type="submit" value="수정완료" name="form_edit_save">
+
+            {% endif %}
+        </div>
+
+    </form>
+    <br>
+
+    {% if context_DB %}
+    {% for DB_data in context_DB %}
+    <br>
+
+    <div>id : {{ DB_data.id}}</div>
+    <div>text : {{ DB_data.text_fields }}</div>
+    <div>bool : {{ DB_data.bool_fields }}</div>
+    <div>char : {{ DB_data.char_fields }}</div>
+
+    <!-- 수정하기 form -->
+    <form action="{% url 'using_DB' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" value="{{ DB_data.id }}" name="hidden">
+
+        <!-- 수정하기 -->
+        <input type="submit" value="수정" name="form_edit">
+
+        <!-- 삭제하기 -->
+        <input type="submit" value="삭제" name="form_del_DB">
+
+    </form>
+    {% endfor %}
+    {% endif %}
+    
+    {% if data_before_edit %}
+    <div>
+        수정전의 데이터
+    </div>
+
+    <div>
+
+        <div>id : {{ data_before_edit.id }}</div>
+        <div>text : {{ data_before_edit.text_fields }}</div>
+        <div>bool : {{ data_before_edit.bool_fields }}</div>
+        <div>char : {{ data_before_edit.char_fields }}</div>
+
+    </div>
+    {% endif %}
+
+</body>
+</html>
